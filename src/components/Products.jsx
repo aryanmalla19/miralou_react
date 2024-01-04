@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductPhoto from "../assets/productPhoto.png"
 import svg from "../assets/star.svg"
-const product = <div className='w-60'>
+const product = <div className='w-60 mb-5'>
                     <div>
                     <img src={ProductPhoto}/>
                     </div>
@@ -16,7 +16,7 @@ const product = <div className='w-60'>
                 </div>
 export default function Products() {
     return (
-        <div className='container mx-auto'>
+        <div className='w-9/12 mx-auto mb-12'>
             <div>
                 <h1 className='font-serif text-5xl text-center mb-3'>
                     New Arrivals

@@ -21,7 +21,7 @@ const data = [
 
 export default function Categories() {
     return (
-        <div className='container mb-24 mx-auto'>
+        <div className='w-9/12 mb-24 mx-auto'>
 
             <div className='flex justify-between'>
 
