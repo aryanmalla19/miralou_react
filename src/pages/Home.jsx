@@ -5,6 +5,7 @@ import Categories from '../components/Categories'
 import Products from '../components/Products'
 import AboutMiralou from '../components/AboutMiralou'
 import About2 from '../components/About2'
+import TwoPart from '../components/TwoPart'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Products/>
         <AboutMiralou/>
         <About2/> 
+        <TwoPart/>
     </div>
   )
 }
