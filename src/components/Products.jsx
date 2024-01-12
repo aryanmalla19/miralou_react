@@ -1,20 +1,8 @@
 import React from 'react'
-import ProductPhoto from "../assets/productPhoto.png"
 import svg from "../assets/star.svg"
-const product = <div className='w-60 mb-5'>
-                    <div>
-                    <img src={ProductPhoto}/>
-                    </div>
-                    <div className='flex mt-2'>
-                        <img src={svg} alt="" />
-                        <p className='ml-1 text-sm mt-1'>1 review</p>
-                    </div>
-                    <div>
-                        <p className='text-base font-bold'>Anti-Ance Serum</p>
-                        <p className='text-base font-bold'>$ 4.99</p>
-                    </div>
-                </div>
-export default function Products() {
+
+export default function Products({ dataa }) {
+    console.log(dataa)
     return (
         <div className='w-9/12 mx-auto mb-12'>
             <div>
@@ -27,14 +15,25 @@ export default function Products() {
                 </p>
             </div>
             <div className='flex-wrap flex justify-between'>
-                {product}
-                {product}
-                {product}
-                {product}
-                {product}
-                {product}
-                {product}
-                {product}
+                {
+                    dataa?.map((new_arr) => {
+                        return (
+                            <div className='w-60 mb-5'>
+                                <div>
+                                    <img src={new_arr.image} alt='idk' />
+                                </div>
+                                <div className='flex mt-2'>
+                                    <img src={svg} alt="" />
+                                    <p className='ml-1 text-sm mt-1'>{new_arr.rating} review</p>
+                                </div>
+                                <div>
+                                    <p className='text-base font-bold'>{new_arr.name}</p>
+                                    <p className='text-base font-bold'>$ {new_arr.price}</p>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </div>
             <div className='mt-10 mx-auto flex items-center justify-center'>
                 <button className='rounded-md border-2 p-2 px-12 border-black'>

@@ -9,25 +9,30 @@ import TwoPart from '../components/TwoPart'
 
 export default function Home() {
 
-  const [data,setData] = useState()
+  const [data, setData] = useState()
 
-  useEffect(()=>{
-    const home_data = fetch('https://miralou-api.sagarlama.com/api/home').then((response)=>{
-      return response.json().then((data)=>{
+  useEffect(() => {
+    fetch('https://miralou-api.sagarlama.com/api/home').then((response) => {
+      return response.json();
+    }).then((data) => {
+      console.log(data.data)
         setData(data.data)
+      }).catch((e) => {
+        setData({
+          categories: [],
+          new_arrivals: []
+        })
       })
-    })
-  },[])
-
-  return (
-    <div>
-        <Navbar  />
-        <Conatiner/>
-        <Categories/>
-        <Products/>
-        <AboutMiralou/>
-        <About2/> 
-        <TwoPart/>
-    </div>
-  )
+  }, [])
+return (
+  <div>
+    <Navbar />
+    <Conatiner />
+    <Categories dataa={data} />
+    <Products dataa={data?.new_arrivals} />
+    <AboutMiralou />
+    <About2 />
+    <TwoPart />
+  </div>
+)
 }
