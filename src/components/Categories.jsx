@@ -28,9 +28,9 @@ export default function Categories() {
                 {
                     data.map((data, i) => {
                         return (
-                            <div className='w-56' key={i}>
-                                <img src={data.photo} alt="" />
-                                <div className='w-9/12 py-1 mx-auto bg-slate-300'>
+                            <div className='w-56 relative flex justify-center' key={i}>
+                                <img src={data.photo} className='z-[1]' alt="" />
+                                <div className='w-9/12 absolute mt-[-13px] z-10 py-1.5  -bottom-5  bg-slate-300'>
                                     <p className='text-center'>
                                         {data.text}
                                     </p>
