@@ -2,7 +2,6 @@ import React from 'react'
 import svg from "../assets/star.svg"
 
 export default function Products({ dataa }) {
-    console.log(dataa)
     return (
         <div className='w-9/12 mx-auto mb-12'>
             <div>
